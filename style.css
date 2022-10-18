@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+:root {
+
+/* ### Primary */
+
+--Strong-cyan: hsl(172, 67%, 45%);
+
+/* ### Neutral */
+
+--Very-dark-cyan: hsl(183, 100%, 15%);
+--Dark-grayish-cyan: hsl(186, 14%, 43%);
+--Grayish-cyan: hsl(184, 14%, 56%);
+--Light-grayish-cyan: hsl(185, 41%, 84%);
+--Very-light-grayish-cyan: hsl(189, 41%, 97%);
+--White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--Light-grayish-cyan);
+}
+
+.main-container {
+    background-color: var(--White);
+    max-width: 25rem;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 5rem;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* justify-content: space-evenly; */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bill-amount {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.bill-amount label {
+    color: var(--Dark-grayish-cyan);
+    font-weight: bold;
+}
+.bill-amount input {
+    border: none;
+    background-color: var(--Very-light-grayish-cyan);
+    height: 3rem;
+    border-radius: 0.3rem;
+    display: flex;
+    text-align: end;
+    color: var(--Very-dark-cyan);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.select-tip {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.select-tip label {
+    color: var(--Dark-grayish-cyan);
+    font-weight: bold;
+}
+
+.select-tip .percentage-options {
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 12rem);
+
+}
+.select-tip .percentage-options button, .select-tip .percentage-options input {
+    height: 3rem;
+}
+.select-tip .percentage-options button {
+    border: none;
+    background-color: var(--Very-dark-cyan);
+    border-radius: 0.3rem;
+    color: var(--White);
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* for JS */
+
+.active {
+    border: none;
+    background-color: var(--Strong-cyan)!important;
+    color: var(--Very-dark-cyan)!important;
+
+}
+
+
+.select-tip .percentage-options input {
+    border: none;
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.number-people {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* for JS */
+.number-people label span {display: none;}
+
+.number-people label {
+    color: var(--Dark-grayish-cyan);
+    font-weight: bold;
+}
+.number-people input {
+    border: none;
+    background-color: var(--Very-light-grayish-cyan);
+    height: 3rem;
+    border-radius: 0.3rem;
+    display: flex;
+    text-align: end;
+    color: var(--Very-dark-cyan);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.results-container {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 0.7rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-amount, .total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+.tip-amount h2, .total-amount h2 {
+    color: var(--White);
+    font-size: 0.9rem;
+}
+.tip-amount span, .total-amount span {
+    color: var(--Grayish-cyan);
+    font-size: 0.7rem;
+}
+.tip-amount p, .total-amount p {
+    font-size: 2rem;
+    color: var(--Strong-cyan);
+}
+
+.reset {
+    margin: 0 auto;
+    width: 90%;
+}
+.reset-btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--Strong-cyan);
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--Very-dark-cyan);
+    text-transform: uppercase;
+}
+
+/* for JS */
+.reset-btn:focus{
+    background-color: hsl(172, 55%, 59%);
+    color: var(--Very-dark-cyan);
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    display: none;
+    appearance: none;
+}
+.input-field, custom-percentage {
+    padding-right: 1rem;
+}
+
+.input-field, .custom-percentage, .input-field {
+    cursor: pointer;
+}
+
+
+@media(min-width: 800px) {
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-width: 60rem;
+        height: 30rem;
+    }
+    .input-container, .results-container {
+        min-width: 25rem;
+        margin-top: 0;
+    }
+    .results-container .tip-amount  {
+        margin-top: 2rem;
+    }
+    .reset-btn {
+        margin-top: 14.5rem;
+    }
+}

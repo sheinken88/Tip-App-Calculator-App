@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="input-container">
+        <form class="bill-amount">
+          <label for="bill-amount">Bill</label>
+          <input
+            class="input-field"
+            type="number"
+            name="amount"
+            id="billAmount"
+            placeholder="0"
+            aria-label="bill-amount"
+            min="0"
+          ></input>
+        </form>
+        <form class="select-tip">
+          <label for="selectTip">Select Tip %</label>
+          <div class="percentage-options">
+            <button type="button" class="btn" aria-label="add-5-percentage" value="5">
+              5
+            </button>
+            <button type="button" class="btn" aria-label="add-10-percentage" value="10">
+              10
+            </button>
+            <button type="button" class="btn" aria-label="add-15-percentage" value="15">
+              15
+            </button>
+            <button type="button" class="btn" aria-label="add-25-percentage" value="25">
+              25
+            </button>
+            <button type="button" class="btn" aria-label="add-50-percentage" value="50">
+              50
+            </button>
+            <input
+              id="custom"
+              class="custom-percentage"
+              type="number"
+              max="100"
+              placeholder="Custom"
+              aria-label="enter-custom-input"
+            />
+          </div>
+        </form>
+        <form class="number-people">
+          <label for="people-count">Number of People <span>Can´t be zero</span></label>
+          <input type="number" class="input-field" name="number-people" id="peopleCount" placeholder="0" aria-activedescendant="enter-number-people" min="0" max="100">
+        </form>
+      </div>
+      <div class="results-container">
+        <div class="tip-amount">
+          <h2>Tip Amount <br><span>/ person</span></h2>
+          <p class="amount" id="tipAmount"></p>
+        </div>
+        <div class="total-amount">
+          <h2>Total <br><span>/ person</span></h2>
+          <p class="amount" id="total"></p>
+        </div>
+        <div class="reset">
+          <button class="reset-btn" id="resetBtn">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
